@@ -1,0 +1,44 @@
+{% if posts.pagination.pages is not empty %}
+  <nav class="">
+    {# First #}
+    {% if posts.pagination.pages|first and posts.pagination.pages|first.current != true %}
+      <a href="{{ posts.pagination.pages|first.link }}" class=" pagination__item--first">First</a>
+    {% else %}
+      <span class="" aria-disabled="true">First</span>
+    {% endif %}
+
+    {# Previous #}
+    {% if posts.pagination.prev %}
+      <a href="{{ posts.pagination.prev.link }}" class="">Previous</a>
+    {% else %}
+      <span class="" aria-disabled="true">Previous</span>
+    {% endif %}
+
+    {# Pages #}
+    <ol class="">
+      {% for page in posts.pagination.pages %}
+        <li class="">
+          {% if page.link %}
+            <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
+          {% else %}
+            <span class="{{ page.class }}">{{ page.title }}</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+
+    {# Next #}
+    {% if posts.pagination.next %}
+      <a href="{{ posts.pagination.next.link }}" class="">Next</a>
+    {% else %}
+      <span class="" aria-disabled="true">Next</span>
+    {% endif %}
+
+    {# Last #}
+    {% if posts.pagination.pages|last and posts.pagination.pages|last.current != true %}
+      <a href="{{ posts.pagination.pages|last.link }}" class="">Last</a>
+    {% else %}
+      <span class="" aria-disabled="true">Last</span>
+    {% endif %}
+  </nav>
+{% endif %}
