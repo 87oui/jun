@@ -22,4 +22,11 @@ $context = Timber::context();
 $timber_post     = new Timber\Post();
 $context['post'] = $timber_post;
 
-Timber::render( array( 'page-' . $timber_post->post_name . '.twig', 'page.twig' ), $context );
+$ancestors = array_map(
+	function( $ancestor ) {
+		return get_post( $ancestor )->post_name;
+	},
+	array_reverse( get_post_ancestors( $timber_post->ID ) )
+);
+
+Timber::render( array( 'page-' . implode( '-', $ancestors ) . '-' . $timber_post->post_name . '.twig', 'page.twig' ), $context );
