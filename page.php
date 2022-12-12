@@ -29,4 +29,4 @@ $ancestors = array_map(
 	array_reverse( get_post_ancestors( $timber_post->ID ) )
 );
 
-Timber::render( array( 'page-' . implode( '-', $ancestors ) . '-' . $timber_post->post_name . '.twig', 'page.twig' ), $context );
+Timber::render( array( implode( '-', ['page', ...$ancestors, $timber_post->post_name] ) . '.twig', 'page.twig' ), $context );
