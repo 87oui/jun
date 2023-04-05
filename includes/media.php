@@ -23,6 +23,7 @@ function get_instagram_photos( $userid, $token, $count = 10 ) {
 		return false;
 	}
 
+	// phpcs:ignore Generic.Files.LineLength
 	$url = "https://graph.facebook.com/v10.0/{$userid}?fields=name%2Cmedia.limit({$count})%7Bcaption%2Cmedia_url%2Cthumbnail_url%2Cpermalink%7D&access_token={$token}";
 	$ch = curl_init();
 	curl_setopt( $ch, CURLOPT_URL, $url );

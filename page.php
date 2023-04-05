@@ -34,4 +34,11 @@ while ( ! empty( $ancestors ) ) {
 	array_pop( $ancestors );
 }
 
-Timber::render( array( implode( '-', array( 'page', ...$ancestors, $timber_post->post_name ) ) . '.twig', ...$ancestor_themes, 'page.twig' ), $context );
+Timber::render(
+	array(
+		implode( '-', array( 'page', ...$ancestors, $timber_post->post_name ) ) . '.twig',
+		...$ancestor_themes,
+		'page.twig',
+	),
+	$context
+);

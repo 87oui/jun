@@ -20,7 +20,9 @@ if ( ! function_exists( 'jun_add_ogp' ) ) {
 		<meta property="og:url" content="<?php echo esc_attr( $ogp->get_url() ); ?>">
 		<meta property="og:image" content="<?php echo esc_attr( $ogp->get_image() ); ?>">
 		<meta property="og:site_name" content="<?php echo esc_attr( $ogp->get_site_name() ); ?>">
-		<meta property="og:description" content="<?php echo esc_attr( $ogp->get_description() ); ?>">
+		<meta property="og:description" content="
+			<?php echo esc_attr( $ogp->get_description() ); ?>
+		">
 		<meta property="og:locale" content="<?php echo esc_attr( $ogp->get_locale() ); ?>">
 		<?php
 	}
@@ -38,4 +40,3 @@ if ( ! function_exists( 'jun_ogp_image_default' ) ) {
 	}
 }
 add_filter( 'inc2734_wp_seo_defult_ogp_image_url', 'jun_ogp_image_default' );
-

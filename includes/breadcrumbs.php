@@ -18,7 +18,9 @@ add_filter(
 		}
 
 		// 投稿ポストタイプにスラッグが設定されている場合、パンくずリストにアーカイブページを挿入
-		if ( defined( 'POST_TYPE_DEFAULT_LABEL' ) && ( is_post_type_archive( 'post' ) || is_singular( 'post' ) ) ) {
+		if ( defined( 'POST_TYPE_DEFAULT_LABEL' )
+			&& ( is_post_type_archive( 'post' ) || is_singular( 'post' ) )
+		) {
 			array_splice(
 				$items,
 				1,

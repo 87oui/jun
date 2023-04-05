@@ -39,7 +39,10 @@ if ( is_day() ) {
 	array_unshift( $templates, 'archive-' . $post_type . '.twig' );
 } elseif ( is_tax() ) {
 	$context['title'] = single_term_title( '', false );
-	array_unshift( $templates, 'archive-' . get_taxonomy( get_query_var( 'taxonomy' ) )->object_type[0] . '.twig' );
+	array_unshift(
+		$templates,
+		'archive-' . get_taxonomy( get_query_var( 'taxonomy' ) )->object_type[0] . '.twig'
+	);
 }
 
 $context['posts'] = new Timber\PostQuery();
