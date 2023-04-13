@@ -1,0 +1,15 @@
+{
+  "name": "jun",
+  "version": "1.0.0",
+  "description": "\"Jun\" WordPress theme with Timber.",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write --ignore-path .gitignore 'templates/**/*.twig'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^2.8.7",
+    "prettier-plugin-twig-melody": "^0.4.6"
+  }
+}
