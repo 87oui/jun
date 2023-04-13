@@ -55,7 +55,7 @@ class StarterSite extends Timber\Site {
 		$breadcrumbs = new Inc2734\WP_Breadcrumbs\Bootstrap();
 		$context['breadcrumbs'] = $breadcrumbs->get();
 
-		$context['menu']  = new Timber\Menu();
+		$context['menu']  = new Timber\Menu( 'global' );
 		$context['site']  = $this;
 
 		return $context;
