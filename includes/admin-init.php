@@ -38,10 +38,6 @@ if ( ! function_exists( 'jun_remove_admin_bar_menus' ) ) {
 			$wp_admin_bar->remove_menu( 'feedback' ); // WordPressロゴ / フィードバック
 
 			$wp_admin_bar->remove_menu( 'updates' ); // 更新
-
-			$wp_admin_bar->remove_menu( 'comments' ); // コメント
-
-			$wp_admin_bar->remove_menu( 'new-page' ); // 新規投稿 / 固定
 		}
 	}
 }
