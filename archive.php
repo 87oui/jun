@@ -16,24 +16,24 @@ array_unshift( $templates, 'archive-post.twig' );
 
 if ( is_day() ) {
 	$context['title'] = get_the_date( 'Y年M月D日' );
-	array_unshift( $templates, 'archive-' . $post_type . '-day.twig' );
+	array_unshift( $templates, 'date.twig' );
 } elseif ( is_month() ) {
 	$context['title'] = get_the_date( 'Y年M月' );
-	array_unshift( $templates, 'archive-' . $post_type . '-month.twig' );
+	array_unshift( $templates, 'date.twig' );
 } elseif ( is_year() ) {
 	$context['title'] = get_the_date( 'Y年' );
-	array_unshift( $templates, 'archive-' . $post_type . '-year.twig' );
+	array_unshift( $templates, 'date.twig' );
 } elseif ( is_tag() ) {
 	$context['title'] = single_tag_title( '', false );
-	array_unshift( $templates, 'archive-' . $post_type . '-tag.twig' );
+	array_unshift( $templates, "tag-{$term_object->slug}.twig", 'tag.twig' );
 } elseif ( is_category() ) {
 	$context['title'] = single_cat_title( '', false );
-	array_unshift( $templates, 'archive-' . get_query_var( 'cat' ) . '.twig' );
+	array_unshift( $templates, "category-{$term_object->slug}.twig", 'category.twig' );
 } elseif ( is_author() ) {
 	$author = new Timber\User( $wp_query->query_vars['author'] );
 	$context['author'] = $author;
 	$context['title']  = $author->name() . 'の記事';
-	array_unshift( $templates, 'archive-' . $author->slug . '.twig' );
+	array_unshift( $templates, "author-{$author->slug}.twig", 'author.twig' );
 } elseif ( is_post_type_archive() ) {
 	$context['title'] = post_type_archive_title( '', false );
 	array_unshift( $templates, 'archive-' . $post_type . '.twig' );
@@ -41,7 +41,8 @@ if ( is_day() ) {
 	$context['title'] = single_term_title( '', false );
 	array_unshift(
 		$templates,
-		'archive-' . get_taxonomy( get_query_var( 'taxonomy' ) )->object_type[0] . '.twig'
+		"taxonomy-{$term_object->slug}.twig",
+		'taxonomy.twig'
 	);
 }
 

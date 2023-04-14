@@ -18,7 +18,6 @@ if ( file_exists( $sidebar_config ) ) {
 
 Timber::render(
 	array(
-		'single-' . $timber_post->ID . '.twig',
 		'single-' . $timber_post->slug . '.twig',
 		'single-' . $timber_post->post_type . '.twig',
 		'single.twig',
