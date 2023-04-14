@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying Archive pages.
+ * アーカイブページ
  *
  * @package Jun
  */

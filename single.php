@@ -1,8 +1,6 @@
 <?php
 /**
- * The Template for displaying all single posts
- *
- * Methods for TimberHelper can be found in the /lib sub-directory
+ * 投稿
  *
  * @package Jun
  */

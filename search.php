@@ -1,6 +1,6 @@
 <?php
 /**
- * Search results page
+ * 検索ページ
  *
  * @package Jun
  */
