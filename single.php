@@ -5,8 +5,10 @@
  * @package Jun
  */
 
-$context         = Timber::context();
-$timber_post     = Timber::query_post();
+$context = Timber::context();
+$timber_post = Timber::query_post();
+$post_type_obj = get_post_type_object( get_post_type() );
+$context['title'] = apply_filters( '87oui_jun_title', $post_type_obj->label, array( 'post' => $timber_post ) );
 $context['post'] = $timber_post;
 
 $sidebar_config = get_stylesheet_directory() . '/sidebar-config.php';

@@ -8,37 +8,46 @@
 $templates = array( 'archive.twig', 'index.twig' );
 
 $context = Timber::context();
-$context['title'] = 'Archive';
+$archive_title = 'アーカイブ';
+$archive_args = array();
 
 global $post_type;
 
 array_unshift( $templates, 'archive-post.twig' );
 
 if ( is_day() ) {
-	$context['title'] = get_the_date( 'Y年M月D日' );
+	$archive_title = get_the_date( 'Y年n月j日' );
 	array_unshift( $templates, 'date.twig' );
 } elseif ( is_month() ) {
-	$context['title'] = get_the_date( 'Y年M月' );
+	$archive_title = get_the_date( 'Y年n月' );
 	array_unshift( $templates, 'date.twig' );
 } elseif ( is_year() ) {
-	$context['title'] = get_the_date( 'Y年' );
+	$archive_title = get_the_date( 'Y年' );
 	array_unshift( $templates, 'date.twig' );
 } elseif ( is_tag() ) {
-	$context['title'] = single_tag_title( '', false );
+	$term_object = get_queried_object();
+	$archive_title = single_tag_title( '', false );
+	$archive_args['tag'] = $term_object;
 	array_unshift( $templates, "tag-{$term_object->slug}.twig", 'tag.twig' );
 } elseif ( is_category() ) {
-	$context['title'] = single_cat_title( '', false );
+	$term_object = get_queried_object();
+	$archive_title = single_cat_title( '', false );
+	$archive_args['category'] = $term_object;
 	array_unshift( $templates, "category-{$term_object->slug}.twig", 'category.twig' );
 } elseif ( is_author() ) {
-	$author = new Timber\User( $wp_query->query_vars['author'] );
+	$author = new Timber\User();
 	$context['author'] = $author;
-	$context['title']  = $author->name() . 'の記事';
+	$archive_args['author'] = $author;
+	$archive_title  = $author->name() . 'の記事';
 	array_unshift( $templates, "author-{$author->slug}.twig", 'author.twig' );
 } elseif ( is_post_type_archive() ) {
-	$context['title'] = post_type_archive_title( '', false );
+	$archive_title = post_type_archive_title( '', false );
+	$archive_args['post_type'] = get_post_type_object( $post_type );
 	array_unshift( $templates, 'archive-' . $post_type . '.twig' );
 } elseif ( is_tax() ) {
-	$context['title'] = single_term_title( '', false );
+	$term_object = get_queried_object();
+	$archive_title = single_term_title( '', false );
+	$archive_args['taxonomy'] = $term_object;
 	array_unshift(
 		$templates,
 		"taxonomy-{$term_object->slug}.twig",
@@ -46,6 +55,7 @@ if ( is_day() ) {
 	);
 }
 
+$context['title'] = apply_filters( '87oui_jun_title', $archive_title, $archive_args );
 $context['posts'] = new Timber\PostQuery();
 
 $sidebar_config = get_stylesheet_directory() . '/sidebar-config.php';
