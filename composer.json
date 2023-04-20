@@ -16,9 +16,15 @@
     }
   },
   "scripts": {
-    "post-install-cmd": [
+    "setup-dev": [
       "vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs",
       "vendor/bin/phpcs --config-set default_standard phpcs.xml"
+    ],
+    "post-install-cmd": [
+      "[ $COMPOSER_DEV_MODE -eq 0 ] || @setup-dev"
+    ],
+    "post-update-cmd": [
+      "[ $COMPOSER_DEV_MODE -eq 0 ] || @setup-dev"
     ]
   }
 }
