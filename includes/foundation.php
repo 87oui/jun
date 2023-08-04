@@ -76,21 +76,3 @@ if ( ! function_exists( 'jun_disable_emoji' ) ) {
 	}
 }
 add_action( 'init', 'jun_disable_emoji' );
-
-if ( ! function_exists( 'jun_body_classes' ) ) {
-	/**
-	 * body要素にクラス追加
-	 *
-	 * @param  array $classes クラス名が格納された配列
-	 * @return array
-	 */
-	function jun_body_classes( $classes ) {
-		// サイドバーがない場合クラス追加
-		if ( ! is_active_sidebar( 'sidebar' ) ) {
-			$classes[] = 'no-sidebar';
-		}
-
-		return $classes;
-	}
-}
-add_filter( 'body_class', 'jun_body_classes' );

@@ -15,7 +15,7 @@ add_theme_support( 'post-thumbnails' );
  * @param string  $token  アクセストークン
  * @param integer $count  取得件数
  *
- * @return object          APIで取得したデータ
+ * @return object         APIで取得したデータ
  */
 function get_instagram_photos( $userid, $token, $count = 10 ) {
 	 // アカウントかトークンがなければfalseを返す

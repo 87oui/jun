@@ -75,18 +75,3 @@ if ( defined( 'POST_TYPE_DEFAULT_SLUG' ) && defined( 'POST_TYPE_DEFAULT_LABEL' )
 		2
 	);
 }
-
-// 投稿を取得するクエリ制御
-add_action(
-	'pre_get_posts',
-	function ( $query ) {
-		if ( is_admin() || ! $query->is_main_query() ) {
-			return;
-		}
-
-		if ( $query->is_archive() ) {
-			// 公開状態の投稿のみ取得
-			$query->set( 'post_status', array( 'publish' ) );
-		}
-	}
-);
