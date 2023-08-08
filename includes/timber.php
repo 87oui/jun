@@ -56,7 +56,7 @@ class StarterSite extends Timber\Site {
 		$context['breadcrumbs'] = $breadcrumbs->get();
 
 		// メニュー
-		$menu = $context['menu'];
+		$context['menu']  = new Timber\Menu( 'global' );
 		foreach ( $menu->items as $i => $item ) {
 			if ( 'page' === $item->object ) {
 				preg_match( '/page_id=(\d+)/', $item->url, $matches );
