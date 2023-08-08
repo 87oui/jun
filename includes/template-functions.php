@@ -22,44 +22,33 @@ function v6p( $content ) {
 }
 
 /**
- * ファイルの更新日をもとにバージョン番号を生成
+ * ファイルをパラメータ付きで呼び出し
  *
- * @param  String $path テーマディレクトリからの相対パス
- * @return String         バージョン番号
- */
-function get_version( $path ) {
-	if ( ! WP_DEBUG ) {
-		return false;
-	}
-
-	$path_absolute = get_theme_file_path( $path );
-	if ( file_exists( $path_absolute ) ) {
-		return date_i18n( 'YmdHi', filemtime( $path_absolute ) );
-	} else {
-		return false;
-	}
-}
-
-/**
- * 静的ファイルのパスを取得してバージョン番号も付与
+ * @param   String $path  assetsより下のパス
  *
- * @param  String $path テーマディレクトリからの相対パス
- * @return String         ファイルパス
+ * @return  String        絶対パスのURL
  */
 function get_static_file_path( $path ) {
-	$version = get_version( $path );
-	$version = $version ? '?ver=' . $version : '';
+	if ( ! WP_DEBUG ) {
+		$manifest_path =
+			get_stylesheet_directory()
+			. apply_filters( 'jun_assets_manifest_path', '/assets/mix-manifest.json' );
+		$manifest = file_exists( $manifest_path )
+			? json_decode( file_get_contents( $manifest_path ), true )
+			: array();
+		$path = ! empty( $manifest ) && isset( $manifest[ $path ] ) ? $manifest[ $path ] : $path;
+	}
 
-	return path_join( get_stylesheet_directory_uri(), $path ) . $version;
+	return path_join( get_stylesheet_directory_uri() . '/assets', $path );
 }
 
 /**
  * 画像ファイルパスを取得
  *
- * @param String $path 画像ディレクトリからの相対パス
+ * @param  String $path 画像ディレクトリからの相対パス
  *
- * @return String         ファイルパス
+ * @return String       ファイルパス
  */
 function get_image_path( $path ) {
-	return get_static_file_path( path_join( 'assets/images', $path ) );
+	return get_static_file_path( path_join( '/images', $path ) );
 }
