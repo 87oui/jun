@@ -21,10 +21,10 @@
       "vendor/bin/phpcs --config-set default_standard phpcs.xml"
     ],
     "post-install-cmd": [
-      "[ $COMPOSER_DEV_MODE -eq 0 ] || @setup-dev"
+      "[ $COMPOSER_DEV_MODE -eq 0 ] || composer setup-dev"
     ],
     "post-update-cmd": [
-      "[ $COMPOSER_DEV_MODE -eq 0 ] || @setup-dev"
+      "[ $COMPOSER_DEV_MODE -eq 0 ] || composer setup-dev"
     ]
   }
 }
