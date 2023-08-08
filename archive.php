@@ -55,7 +55,7 @@ if ( is_day() ) {
 	);
 }
 
-$context['title'] = apply_filters( '87oui_jun_title', $archive_title, $archive_args );
+$context['title'] = apply_filters( 'jun_page_title', $archive_title, $archive_args );
 $context['posts'] = new Timber\PostQuery();
 
 $sidebar_config = get_stylesheet_directory() . '/sidebar-config.php';

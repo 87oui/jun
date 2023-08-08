@@ -9,7 +9,7 @@ $templates = array( 'search.twig', 'archive.twig', 'index.twig' );
 
 $context          = Timber::context();
 $context['title'] = apply_filters(
-	'87oui_jun_title',
+	'jun_page_title',
 	sprintf(
 		/* translators: %s: Search term. */
 		esc_html( '検索結果: "%s"' ),

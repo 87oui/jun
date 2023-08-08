@@ -8,7 +8,7 @@
 $context = Timber::context();
 
 $timber_post     = new Timber\Post();
-$context['title'] = apply_filters( '87oui_jun_title', $timber_post->post_title, array( 'post' => $timber_post ) );
+$context['title'] = apply_filters( 'jun_page_title', $timber_post->post_title, array( 'post' => $timber_post ) );
 $context['post'] = $timber_post;
 
 $ancestors = array_map(
