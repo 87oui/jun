@@ -55,7 +55,24 @@ class StarterSite extends Timber\Site {
 		$breadcrumbs = new Inc2734\WP_Breadcrumbs\Bootstrap();
 		$context['breadcrumbs'] = $breadcrumbs->get();
 
-		$context['menu']  = new Timber\Menu( 'global' );
+		// メニュー
+		$menu = $context['menu'];
+		foreach ( $menu->items as $i => $item ) {
+			if ( 'page' === $item->object ) {
+				preg_match( '/page_id=(\d+)/', $item->url, $matches );
+				if ( $matches ) {
+					$page_id = $matches[1];
+					$page = get_post( $page_id );
+				} else {
+					$page = get_page_by_path( str_replace( get_home_url(), '', $item->url ) );
+				}
+				$menu->items[ $i ]->disabled = 'publish' !== $page->post_status;
+			} else {
+				$menu->items[ $i ]->disabled = false;
+			}
+		}
+		$context['menu'] = $menu;
+
 		$context['site']  = $this;
 
 		return $context;
