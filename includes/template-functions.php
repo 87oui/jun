@@ -39,7 +39,7 @@ function get_static_file_path( $path ) {
 		$path = ! empty( $manifest ) && isset( $manifest[ $path ] ) ? $manifest[ $path ] : $path;
 	}
 
-	return path_join( get_stylesheet_directory_uri() . '/assets', $path );
+	return get_stylesheet_directory_uri() . '/assets' . $path;
 }
 
 /**
