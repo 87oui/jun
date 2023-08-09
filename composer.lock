@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "457229a3d9193cc96c867a73bb383cca",
+    "content-hash": "9f56dd472693e8139072e4f940e92cb2",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -60,43 +60,45 @@
                 "router",
                 "routing"
             ],
+            "support": {
+                "issues": "https://github.com/dannyvankooten/AltoRouter/issues",
+                "source": "https://github.com/dannyvankooten/AltoRouter/tree/2.0.2"
+            },
             "time": "2020-03-09T08:34:59+00:00"
         },
         {
             "name": "composer/installers",
-            "version": "v1.12.0",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19"
+                "reference": "c29dc4b93137acb82734f672c37e029dfbd95b35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/d20a64ed3c94748397ff5973488761b22f6d3f19",
-                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19",
+                "url": "https://api.github.com/repos/composer/installers/zipball/c29dc4b93137acb82734f672c37e029dfbd95b35",
+                "reference": "c29dc4b93137acb82734f672c37e029dfbd95b35",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "^1.0 || ^2.0"
-            },
-            "replace": {
-                "roundcube/plugin-installer": "*",
-                "shama/baton": "*"
+                "composer-plugin-api": "^1.0 || ^2.0",
+                "php": "^7.2 || ^8.0"
             },
             "require-dev": {
                 "composer/composer": "1.6.* || ^2.0",
                 "composer/semver": "^1 || ^3",
                 "phpstan/phpstan": "^0.12.55",
                 "phpstan/phpstan-phpunit": "^0.12.16",
-                "symfony/phpunit-bridge": "^4.2 || ^5",
-                "symfony/process": "^2.3"
+                "symfony/phpunit-bridge": "^5.3",
+                "symfony/process": "^5"
             },
             "type": "composer-plugin",
             "extra": {
                 "class": "Composer\\Installers\\Plugin",
                 "branch-alias": {
-                    "dev-main": "1.x-dev"
-                }
+                    "dev-main": "2.x-dev"
+                },
+                "plugin-modifies-install-path": true
             },
             "autoload": {
                 "psr-4": {
@@ -117,7 +119,6 @@
             "description": "A multi-framework Composer library installer",
             "homepage": "https://composer.github.io/installers/",
             "keywords": [
-                "Craft",
                 "Dolibarr",
                 "Eliasis",
                 "Hurad",
@@ -138,7 +139,6 @@
                 "Whmcs",
                 "WolfCMS",
                 "agl",
-                "aimeos",
                 "annotatecms",
                 "attogram",
                 "bitrix",
@@ -157,7 +157,6 @@
                 "grav",
                 "installer",
                 "itop",
-                "joomla",
                 "known",
                 "kohana",
                 "laravel",
@@ -166,6 +165,7 @@
                 "magento",
                 "majima",
                 "mako",
+                "matomo",
                 "mediawiki",
                 "miaoxing",
                 "modulework",
@@ -185,14 +185,16 @@
                 "silverstripe",
                 "sydes",
                 "sylius",
-                "symfony",
                 "tastyigniter",
-                "typo3",
                 "wordpress",
                 "yawik",
                 "zend",
                 "zikula"
             ],
+            "support": {
+                "issues": "https://github.com/composer/installers/issues",
+                "source": "https://github.com/composer/installers/tree/v2.2.0"
+            },
             "funding": [
                 {
                     "url": "https://packagist.com",
@@ -207,20 +209,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-09-13T08:19:44+00:00"
+            "time": "2022-08-20T06:45:11+00:00"
         },
         {
             "name": "inc2734/wp-breadcrumbs",
-            "version": "3.1.7",
+            "version": "3.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/inc2734/wp-breadcrumbs.git",
-                "reference": "3c3f24b681164e669aece87428c224adfae2327d"
+                "reference": "830c88c333ec2f998e59c5106336964e9fbed024"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/inc2734/wp-breadcrumbs/zipball/3c3f24b681164e669aece87428c224adfae2327d",
-                "reference": "3c3f24b681164e669aece87428c224adfae2327d",
+                "url": "https://api.github.com/repos/inc2734/wp-breadcrumbs/zipball/830c88c333ec2f998e59c5106336964e9fbed024",
+                "reference": "830c88c333ec2f998e59c5106336964e9fbed024",
                 "shasum": ""
             },
             "require": {
@@ -251,32 +253,33 @@
                 }
             ],
             "description": "A library for WordPress breadcrumbs.",
-            "time": "2021-08-12T10:01:25+00:00"
+            "support": {
+                "issues": "https://github.com/inc2734/wp-breadcrumbs/issues",
+                "source": "https://github.com/inc2734/wp-breadcrumbs/tree/3.1.8"
+            },
+            "time": "2021-11-16T00:58:13+00:00"
         },
         {
             "name": "inc2734/wp-ogp",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/inc2734/wp-ogp.git",
-                "reference": "0c4c3c7413a5ed963cb79d0409b612e4f2b569f1"
+                "reference": "45eecd38662770f2ce4d53f097f23bbcc62a25f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/inc2734/wp-ogp/zipball/0c4c3c7413a5ed963cb79d0409b612e4f2b569f1",
-                "reference": "0c4c3c7413a5ed963cb79d0409b612e4f2b569f1",
+                "url": "https://api.github.com/repos/inc2734/wp-ogp/zipball/45eecd38662770f2ce4d53f097f23bbcc62a25f2",
+                "reference": "45eecd38662770f2ce4d53f097f23bbcc62a25f2",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.6"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
-                "phpcompatibility/phpcompatibility-wp": "*",
-                "phpmd/phpmd": "2.*",
-                "phpunit/phpunit": "7.*",
-                "squizlabs/php_codesniffer": "*",
-                "wp-coding-standards/wpcs": "*"
+                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+                "wp-coding-standards/wpcs": "^2.3",
+                "yoast/phpunit-polyfills": "^1.0"
             },
             "type": "library",
             "autoload": {
@@ -295,7 +298,11 @@
                 }
             ],
             "description": "A library for WordPress OGP.",
-            "time": "2020-02-04T05:26:25+00:00"
+            "support": {
+                "issues": "https://github.com/inc2734/wp-ogp/issues",
+                "source": "https://github.com/inc2734/wp-ogp/tree/2.0.3"
+            },
+            "time": "2023-05-26T00:46:19+00:00"
         },
         {
             "name": "inc2734/wp-seo",
@@ -340,24 +347,31 @@
                 }
             ],
             "description": "A library for SEO of WordPress.",
+            "support": {
+                "issues": "https://github.com/inc2734/wp-seo/issues",
+                "source": "https://github.com/inc2734/wp-seo/tree/4.2.1"
+            },
             "time": "2020-12-08T10:48:12+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.23.0",
+            "version": "v1.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "46cd95797e9df938fdd2b03693b5fca5e64b01ce"
+                "reference": "5bbc823adecdae860bb64756d639ecfec17b050a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/46cd95797e9df938fdd2b03693b5fca5e64b01ce",
-                "reference": "46cd95797e9df938fdd2b03693b5fca5e64b01ce",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/5bbc823adecdae860bb64756d639ecfec17b050a",
+                "reference": "5bbc823adecdae860bb64756d639ecfec17b050a",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1"
+            },
+            "provide": {
+                "ext-ctype": "*"
             },
             "suggest": {
                 "ext-ctype": "For best performance"
@@ -365,7 +379,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.23-dev"
+                    "dev-main": "1.27-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -373,12 +387,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Ctype\\": ""
-                },
                 "files": [
                     "bootstrap.php"
-                ]
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Ctype\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -402,6 +416,9 @@
                 "polyfill",
                 "portable"
             ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.27.0"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -416,24 +433,27 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-19T12:13:01+00:00"
+            "time": "2022-11-03T14:55:06+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.23.1",
+            "version": "v1.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "9174a3d80210dca8daa7f31fec659150bbeabfc6"
+                "reference": "8ad114f6b39e2c98a8b0e3bd907732c207c2b534"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/9174a3d80210dca8daa7f31fec659150bbeabfc6",
-                "reference": "9174a3d80210dca8daa7f31fec659150bbeabfc6",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/8ad114f6b39e2c98a8b0e3bd907732c207c2b534",
+                "reference": "8ad114f6b39e2c98a8b0e3bd907732c207c2b534",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1"
+            },
+            "provide": {
+                "ext-mbstring": "*"
             },
             "suggest": {
                 "ext-mbstring": "For best performance"
@@ -441,7 +461,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.23-dev"
+                    "dev-main": "1.27-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -449,12 +469,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Mbstring\\": ""
-                },
                 "files": [
                     "bootstrap.php"
-                ]
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -479,6 +499,9 @@
                 "portable",
                 "shim"
             ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.27.0"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -493,38 +516,109 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-27T12:26:48+00:00"
+            "time": "2022-11-03T14:55:06+00:00"
         },
         {
-            "name": "timber/timber",
-            "version": "1.19.1",
+            "name": "symfony/polyfill-php72",
+            "version": "v1.27.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/timber/timber.git",
-                "reference": "3e213fbd3587eb36adec2d5a081824c4722a0acf"
+                "url": "https://github.com/symfony/polyfill-php72.git",
+                "reference": "869329b1e9894268a8a61dabb69153029b7a8c97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/timber/timber/zipball/3e213fbd3587eb36adec2d5a081824c4722a0acf",
-                "reference": "3e213fbd3587eb36adec2d5a081824c4722a0acf",
+                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/869329b1e9894268a8a61dabb69153029b7a8c97",
+                "reference": "869329b1e9894268a8a61dabb69153029b7a8c97",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "~1.0",
-                "php": ">=5.3.0|7.*",
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.27-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php72\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 7.2+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php72/tree/v1.27.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-11-03T14:55:06+00:00"
+        },
+        {
+            "name": "timber/timber",
+            "version": "1.22.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/timber/timber.git",
+                "reference": "57fc582c42519f1b05fff5fb2ebf4291b5cd638f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/timber/timber/zipball/57fc582c42519f1b05fff5fb2ebf4291b5cd638f",
+                "reference": "57fc582c42519f1b05fff5fb2ebf4291b5cd638f",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0",
+                "php": ">=7.2.5 || ^8.0",
                 "twig/cache-extension": "^1.5",
-                "twig/twig": "^1.41|^2.10",
-                "upstatement/routes": "0.8.1"
+                "twig/twig": "^1.44.7 || ^2.10",
+                "upstatement/routes": "^0.9"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-                "johnpbloch/wordpress": "*",
-                "phpunit/phpunit": "5.7.16|6.*",
-                "squizlabs/php_codesniffer": "3.*",
-                "wp-coding-standards/wpcs": "^2.0",
-                "wpackagist-plugin/advanced-custom-fields": "5.*",
-                "wpackagist-plugin/co-authors-plus": "3.2.*|3.4.*",
-                "yoast/phpunit-polyfills": "^1.0"
+                "wpackagist-plugin/advanced-custom-fields": "^5.0",
+                "wpackagist-plugin/co-authors-plus": "^3.2 || ^3.4",
+                "yoast/wp-test-utils": "^1.0"
             },
             "suggest": {
                 "satooshi/php-coveralls": "1.0.* for code coverage"
@@ -559,7 +653,12 @@
                 "timber",
                 "twig"
             ],
-            "time": "2021-10-18T13:21:54+00:00"
+            "support": {
+                "docs": "https://timber.github.io/docs/",
+                "issues": "https://github.com/timber/timber/issues",
+                "source": "https://github.com/timber/timber"
+            },
+            "time": "2022-11-24T03:42:29+00:00"
         },
         {
             "name": "twig/cache-extension",
@@ -616,6 +715,10 @@
                 "extension",
                 "twig"
             ],
+            "support": {
+                "issues": "https://github.com/twigphp/twig-cache-extension/issues",
+                "source": "https://github.com/twigphp/twig-cache-extension/tree/v1.5.0"
+            },
             "funding": [
                 {
                     "url": "https://github.com/fabpot",
@@ -631,22 +734,23 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.14.7",
+            "version": "v2.15.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "8e202327ee1ed863629de9b18a5ec70ac614d88f"
+                "reference": "fc02a6af3eeb97c4bf5650debc76c2eda85ac22e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/8e202327ee1ed863629de9b18a5ec70ac614d88f",
-                "reference": "8e202327ee1ed863629de9b18a5ec70ac614d88f",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/fc02a6af3eeb97c4bf5650debc76c2eda85ac22e",
+                "reference": "fc02a6af3eeb97c4bf5650debc76c2eda85ac22e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2.5",
+                "php": ">=7.1.3",
                 "symfony/polyfill-ctype": "^1.8",
-                "symfony/polyfill-mbstring": "^1.3"
+                "symfony/polyfill-mbstring": "^1.3",
+                "symfony/polyfill-php72": "^1.8"
             },
             "require-dev": {
                 "psr/container": "^1.0",
@@ -655,7 +759,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.14-dev"
+                    "dev-master": "2.15-dev"
                 }
             },
             "autoload": {
@@ -692,6 +796,10 @@
             "keywords": [
                 "templating"
             ],
+            "support": {
+                "issues": "https://github.com/twigphp/Twig/issues",
+                "source": "https://github.com/twigphp/Twig/tree/v2.15.5"
+            },
             "funding": [
                 {
                     "url": "https://github.com/fabpot",
@@ -702,26 +810,26 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-09-17T08:39:54+00:00"
+            "time": "2023-05-03T17:49:41+00:00"
         },
         {
             "name": "upstatement/routes",
-            "version": "0.8.1",
+            "version": "0.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Upstatement/routes.git",
-                "reference": "02eb866668f5478d794547aa79e73dd92a989ad9"
+                "reference": "cac3c844ab824e4039fd26edbea5402415aa6d0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Upstatement/routes/zipball/02eb866668f5478d794547aa79e73dd92a989ad9",
-                "reference": "02eb866668f5478d794547aa79e73dd92a989ad9",
+                "url": "https://api.github.com/repos/Upstatement/routes/zipball/cac3c844ab824e4039fd26edbea5402415aa6d0a",
+                "reference": "cac3c844ab824e4039fd26edbea5402415aa6d0a",
                 "shasum": ""
             },
             "require": {
                 "altorouter/altorouter": "^2.0.2",
-                "composer/installers": "~1.0",
-                "php": ">=5.6.0"
+                "composer/installers": "^1.0 || ^2.0",
+                "php": ">=5.6.0|7.*"
             },
             "require-dev": {
                 "phpunit/phpunit": "5.7.16",
@@ -753,7 +861,12 @@
                 "routes",
                 "routing"
             ],
-            "time": "2021-10-16T00:12:03+00:00"
+            "support": {
+                "issues": "https://github.com/Upstatement/routes/issues",
+                "source": "https://github.com/Upstatement/routes",
+                "wiki": "https://github.com/Upstatement/routes/wiki"
+            },
+            "time": "2022-06-22T19:53:51+00:00"
         }
     ],
     "packages-dev": [
