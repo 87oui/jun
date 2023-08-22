@@ -37,14 +37,19 @@ function get_static_file_path( $path ) {
 		$manifest = file_exists( $manifest_path )
 			? json_decode( file_get_contents( $manifest_path ), true )
 			: array();
-		if ( ! empty( $manifest ) && isset( $manifest[ $path ] ) ) {
-			$path = $manifest[ $path ];
+		$manifest_index = apply_filters( 'jun_assets_manifest_index_prefix', '/' ) . $path;
+		if ( ! empty( $manifest ) && isset( $manifest[ $manifest_index ] ) ) {
+			$path = $manifest[ $manifest_index ];
 		} else {
 			$absolute_path = get_theme_file_path( path_join( 'assets', $path ) );
 			if ( file_exists( $absolute_path ) ) {
 				$path = $path . '?' . gmdate( 'YmdHi', filemtime( $absolute_path ) );
 			}
 		}
+	}
+
+	if ( path_is_absolute( $path ) ) {
+		$path = substr( $path, 1, strlen( $str ) - 1 );
 	}
 
 	return path_join( get_stylesheet_directory_uri() . '/assets', $path );
