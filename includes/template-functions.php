@@ -49,7 +49,7 @@ function get_static_file_path( $path ) {
 	}
 
 	if ( path_is_absolute( $path ) ) {
-		$path = substr( $path, 1, strlen( $str ) - 1 );
+		$path = preg_replace( '/^\//', '', $path );
 	}
 
 	return path_join( get_stylesheet_directory_uri() . '/assets', $path );
