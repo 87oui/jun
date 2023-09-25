@@ -16,6 +16,12 @@
     }
   },
   "scripts": {
+    "format": [
+      "vendor/bin/phpcbf ."
+    ],
+    "lint": [
+      "vendor/bin/phpcs ."
+    ],
     "setup-dev": [
       "vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs",
       "vendor/bin/phpcs --config-set default_standard phpcs.xml"
