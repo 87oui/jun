@@ -7,7 +7,7 @@
 
 $context = Timber::context();
 $context['title'] = apply_filters( 'jun_page_title', '' );
-$context['posts'] = new Timber\PostQuery();
+$context['posts'] = Timber::get_posts(['post_type'=>'post']);
 if ( 'page' === get_option( 'show_on_front' ) ) {
 	$context['post'] = new Timber\Post();
 }
