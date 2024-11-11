@@ -49,6 +49,9 @@ class StarterSite extends Site {
 	 */
 	public function add_to_context( $context ) {
 		$context['site'] = $this;
+		
+		// 環境変数
+		$context['WP_ENV'] = getenv('WP_ENV');
 
 		// パンくずリスト
 		$breadcrumbs            = new \Inc2734\WP_Breadcrumbs\Bootstrap();
