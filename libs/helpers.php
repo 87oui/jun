@@ -1,6 +1,6 @@
 <?php
 /**
- * テーマ用関数
+ * ヘルパー関数
  *
  * @package Jun
  */
@@ -29,27 +29,26 @@ function v6p( $content ) {
  * @return  String        絶対パスのURL
  */
 function get_static_file_path( $path ) {
+	if ( path_is_absolute( $path ) ) {
+		$path = preg_replace( '/^\//', '', $path );
+	}
+
 	if ( ! WP_DEBUG ) {
 		$manifest_path = path_join(
 			get_stylesheet_directory(),
-			apply_filters( 'jun_assets_manifest_path', 'assets/mix-manifest.json' )
+			apply_filters( 'jun_assets_manifest_path', 'assets/.vite/manifest.json' )
 		);
 		$manifest = file_exists( $manifest_path )
 			? json_decode( file_get_contents( $manifest_path ), true )
 			: array();
-		$manifest_index = apply_filters( 'jun_assets_manifest_index_prefix', '/' ) . $path;
-		if ( ! empty( $manifest ) && isset( $manifest[ $manifest_index ] ) ) {
-			$path = $manifest[ $manifest_index ];
+		if ( ! empty( $manifest ) && isset( $manifest[ $path ] ) ) {
+			$path = $manifest[ $path ][ $file ];
 		} else {
 			$absolute_path = get_theme_file_path( path_join( 'assets', $path ) );
 			if ( file_exists( $absolute_path ) ) {
-				$path = $path . '?' . gmdate( 'YmdHi', filemtime( $absolute_path ) );
+				$path = $path . '?v=' . gmdate( 'YmdHi', filemtime( $absolute_path ) );
 			}
 		}
-	}
-
-	if ( path_is_absolute( $path ) ) {
-		$path = preg_replace( '/^\//', '', $path );
 	}
 
 	return path_join( get_stylesheet_directory_uri() . '/assets', $path );

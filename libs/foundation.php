@@ -5,12 +5,6 @@
  * @package Jun
  */
 
-// head要素にRSSフィードへのリンクを出力
-add_theme_support( 'automatic-feed-links' );
-
-// title要素を出力
-add_theme_support( 'title-tag' );
-
 if ( ! function_exists( 'jun_custom_document_title_separator' ) ) {
 	/**
 	 * タイトルの区切り文字を変更
@@ -22,28 +16,6 @@ if ( ! function_exists( 'jun_custom_document_title_separator' ) ) {
 	}
 }
 add_filter( 'document_title_separator', 'jun_custom_document_title_separator' );
-
-// メニューを有効化
-add_theme_support( 'menus' );
-
-// メニューを追加
-register_nav_menus(
-	array(
-		'global' => 'グローバルナビゲーション',
-	)
-);
-
-// HTML5でマークアップする
-add_theme_support(
-	'html5',
-	array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	)
-);
 
 // WordPressのバージョン情報を削除
 remove_action( 'wp_head', 'wp_generator' );

@@ -18,7 +18,9 @@
     <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar"/>
     <exclude name="WordPress.DB.PreparedSQL.NotPrepared"/>
     <exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
+    <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
     <exclude name="WordPress.PHP.DontExtract.extract_extract"/>
+    <exclude name="WordPress.WP.Capabilities.RoleFound"/>
     <exclude name="WordPress.WP.EnqueuedResourceParameters.MissingVersion"/>
   </rule>
 </ruleset>

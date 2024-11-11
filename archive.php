@@ -3,7 +3,12 @@
  * アーカイブページ
  *
  * @package Jun
+ * Learn more: https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
+
+namespace App;
+
+use Timber\Timber;
 
 $templates = array( 'archive.twig', 'index.twig' );
 
@@ -57,12 +62,5 @@ if ( is_day() ) {
 
 $context['title'] = apply_filters( 'jun_page_title', $archive_title, $archive_args );
 $context['posts'] = new Timber\PostQuery();
-
-$sidebar_config = get_stylesheet_directory() . '/sidebar-config.php';
-if ( file_exists( $sidebar_config ) ) {
-	include_once $sidebar_config;
-	$sidebar_context = jun_get_sidebar_config( $post_type );
-	$context['sidebar'] = Timber::get_sidebar( 'sidebar.twig', $sidebar_context );
-}
 
 Timber::render( $templates, $context );
