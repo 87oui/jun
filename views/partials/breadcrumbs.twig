@@ -1,15 +1,19 @@
-<ol class="" itemscope itemtype="http://schema.org/BreadcrumbList">
-  {% for item in breadcrumbs %}
-    <li class="c-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <a
-        itemscope
-        itemtype="http://schema.org/Thing"
-        itemprop="item"
-        aria-current="{{loop.last ? 'location' : 'false'}}"
-        href="{{item.link}}">
-        <span itemprop="name">{{ item.title }}</span>
-      </a>
-      <meta itemprop="position" content="{{loop.index}}">
-    </li>
-  {% endfor %}
-</ol>
+{% if breadcrumbs %}
+  <nav class="breadcrumbs" aria-label="パンくずリスト">
+    <ol class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+      {% for breadcrumb in breadcrumbs %}
+        <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a
+            itemscope
+            itemtype="http://schema.org/Thing"
+            itemprop="item"
+            href="{{ breadcrumb.link }}"
+            class="breadcrumbs__link">
+            <span itemprop="name" class="breadcrumbs__title">{{ breadcrumb.title }}</span>
+          </a>
+          <meta itemprop="position" content="{{ loop.index }}">
+        </li>
+      {% endfor %}
+    </ol>
+  </nav>
+{% endif %}
