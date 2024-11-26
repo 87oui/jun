@@ -1,8 +1,12 @@
 <!doctype html>
 <html {{ site.language_attributes }}>
-  {% block head %}
+  <head>
+    <meta charset="{{ site.charset }}">
+    <meta name="viewport" content="width=device-width">
     {% include 'partials/head.twig' %}
-  {% endblock %}
+    {% do action('get_header') %}
+    {{ function('wp_head') }}
+  </head>
 
   <body class="{{ body_class }}">
     {{ function('wp_body_open') }}
