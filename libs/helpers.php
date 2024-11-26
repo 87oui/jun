@@ -45,13 +45,15 @@ if(!function_exists('get_static_file_path')){
 	}
 }
 
-/**
- * 画像ファイルパスを取得
- *
- * @param  String $path 画像ディレクトリからの相対パス
- *
- * @return String       ファイルパス
- */
-function get_image_path( $path ) {
-	return get_static_file_path( path_join( 'images', $path ) );
+if(!function_exists('get_image_path')){
+	/**
+	 * 画像ファイルパスを取得
+	 *
+	 * @param  String $path 画像ディレクトリからの相対パス
+	 *
+	 * @return String       ファイルパス
+	 */
+	function get_image_path( $path ) {
+		return get_static_file_path( path_join( 'images', $path ) );
+	}
 }
