@@ -21,7 +21,7 @@ function v6p( $content ) {
 	echo '</code></pre>';
 }
 
-if(!function_exists('get_static_file_path')){
+if ( ! function_exists( 'get_static_file_path' ) ) {
 	/**
 	 * ファイルをパラメータ付きで呼び出し
 	 *
@@ -33,19 +33,19 @@ if(!function_exists('get_static_file_path')){
 		if ( path_is_absolute( $path ) ) {
 			$path = preg_replace( '/^\//', '', $path );
 		}
-	
+
 		if ( ! WP_DEBUG ) {
 			$absolute_path = get_theme_file_path( path_join( 'assets', $path ) );
 			if ( file_exists( $absolute_path ) ) {
 				$path = $path . '?v=' . gmdate( 'YmdHi', filemtime( $absolute_path ) );
 			}
 		}
-	
+
 		return path_join( get_stylesheet_directory_uri() . '/assets', $path );
 	}
 }
 
-if(!function_exists('get_image_path')){
+if ( ! function_exists( 'get_image_path' ) ) {
 	/**
 	 * 画像ファイルパスを取得
 	 *
