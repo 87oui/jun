@@ -40,7 +40,7 @@ if ( is_day() ) {
 	$archive_args['category'] = $term_object;
 	array_unshift( $templates, "category-{$term_object->slug}.twig", 'category.twig' );
 } elseif ( is_author() ) {
-	$author = new Timber\User();
+	$author = Timber::get_user();
 	$context['author'] = $author;
 	$archive_args['author'] = $author;
 	$archive_title  = $author->name() . 'の記事';
@@ -61,6 +61,6 @@ if ( is_day() ) {
 }
 
 $context['title'] = apply_filters( 'jun_page_title', $archive_title, $archive_args );
-$context['posts'] = new Timber\PostQuery();
+$context['posts'] = Timber::get_posts();
 
 Timber::render( $templates, $context );

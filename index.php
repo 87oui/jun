@@ -6,7 +6,7 @@
  */
 
 $context          = Timber::context();
-$context['posts'] = new Timber\PostQuery();
+$context['posts'] = Timber::get_posts();
 $templates        = array( 'index.twig' );
 use Timber\Timber;
 

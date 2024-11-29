@@ -18,6 +18,6 @@ $context['title'] = apply_filters(
 		esc_html( get_search_query() )
 	)
 );
-$context['posts'] = new Timber\PostQuery();
+$context['posts'] = Timber::get_posts();
 
 Timber::render( $templates, $context );

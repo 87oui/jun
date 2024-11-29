@@ -9,7 +9,7 @@ namespace App;
 
 $context = Timber::context();
 
-$timber_post     = new Timber\Post();
+$timber_post     = Timber::get_post();
 $context['title'] = apply_filters( 'jun_page_title', $timber_post->post_title, array( 'post' => $timber_post ) );
 $context['post'] = $timber_post;
 use Timber\Timber;
