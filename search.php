@@ -5,6 +5,8 @@
  * @package Jun
  */
 
+ namespace App;
+
 use Timber\Timber;
 
 $templates = array( 'search.twig', 'archive.twig', 'index.twig' );
