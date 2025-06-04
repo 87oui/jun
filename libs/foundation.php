@@ -5,18 +5,6 @@
  * @package Jun
  */
 
-if ( ! function_exists( 'jun_custom_document_title_separator' ) ) {
-	/**
-	 * タイトルの区切り文字を変更
-	 *
-	 * @return string  区切り文字
-	 */
-	function jun_custom_document_title_separator() {
-		return '|';
-	}
-}
-add_filter( 'document_title_separator', 'jun_custom_document_title_separator' );
-
 // WordPressのバージョン情報を削除
 remove_action( 'wp_head', 'wp_generator' );
 
