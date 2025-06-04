@@ -5,20 +5,28 @@
  * @package Jun
  */
 
-/**
- * var_dump wrapper
- *
- * @param  String $content dumpしたい内容
- * @return void
- */
-function v6p( $content ) {
-	if ( is_string( $content ) ) {
-		$content = htmlspecialchars( $content );
+if ( ! function_exists( 'dump' ) ) {
+	/**
+	 * var_dumpラッパー
+	 *
+	 * @param   mixed ...$contents  ダンプする内容
+	 *
+	 * @return  void
+	 */
+	function dump( ...$contents ) {
+		// ローカル環境のみ
+		$env = wp_get_environment_type();
+		if ( WP_DEBUG ) {
+			foreach ( $contents as $content ) {
+				if ( is_string( $content ) ) {
+					$content = htmlspecialchars( $content );
+				}
+				echo '<pre>';
+				var_dump( $content );
+				echo '</pre>';
+			}
+		}
 	}
-
-	echo '<pre><code>';
-	var_dump( $content );
-	echo '</code></pre>';
 }
 
 if ( ! function_exists( 'get_static_file_path' ) ) {
