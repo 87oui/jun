@@ -51,7 +51,7 @@ class StarterSite extends Site {
 		$context['site'] = $this;
 
 		// 環境変数
-		$context['WP_ENV'] = getenv( 'WP_ENV' );
+		$context['env'] = wp_get_environment_type();
 
 		// パンくずリスト
 		$breadcrumbs            = new \Inc2734\WP_Breadcrumbs\Bootstrap();
