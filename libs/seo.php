@@ -20,6 +20,7 @@ add_filter(
 add_filter(
 	'inc2734_wp_seo_twitter_site',
 	function () {
+		// NOTE: 文字列型でないとDeprecatedになるため記述
 		return '';
 	}
 );
