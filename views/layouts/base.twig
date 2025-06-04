@@ -11,6 +11,7 @@
   <body class="{{ body_class }}">
     {{ function('wp_body_open') }}
     {% include 'partials/header.twig' %}
+    {% include 'partials/breadcrumbs.twig' %}
 
     {% block content %}{% endblock %}
 

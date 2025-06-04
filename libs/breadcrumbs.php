@@ -17,8 +17,7 @@ add_filter(
 			return array();
 		}
 
-		// 最後の項目のリンクを外す
-		unset( $items[ count( $items ) - 1 ]['link'] );
+		$items = apply_filters('jun_breadcrumbs', $items );
 
 		return $items;
 	}
