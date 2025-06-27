@@ -126,6 +126,13 @@ class StarterSite extends Site {
 				'global' => 'グローバルナビゲーション',
 			)
 		);
+
+		/**
+		 * 埋め込みコンテンツのレスポンシブ化を有効化
+		 * 
+		 * See: https://ja.wordpress.org/team/handbook/block-editor/how-to-guides/themes/theme-support/
+		 */
+		add_theme_support( 'responsive-embeds' );
 	}
 
 	/**
