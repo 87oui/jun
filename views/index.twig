@@ -1,6 +1,8 @@
 {% extends 'layouts/base.twig' %}
 
 {% block content %}
+  {{ post.post_content }}
+
   {% for post in posts %}
     {% include ['partials/tease-' ~ post.type ~ '.twig', 'partials/tease.twig'] %}
   {% endfor %}
