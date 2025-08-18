@@ -4,8 +4,154 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "810e12c7d914b606cb6cee7994998170",
+    "content-hash": "d11800254e3f49e08a80527fb93d693f",
     "packages": [
+        {
+            "name": "composer/installers",
+            "version": "v2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers.git",
+                "reference": "12fb2dfe5e16183de69e784a7b84046c43d97e8e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/installers/zipball/12fb2dfe5e16183de69e784a7b84046c43d97e8e",
+                "reference": "12fb2dfe5e16183de69e784a7b84046c43d97e8e",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0 || ^2.0",
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "composer/composer": "^1.10.27 || ^2.7",
+                "composer/semver": "^1.7.2 || ^3.4.0",
+                "phpstan/phpstan": "^1.11",
+                "phpstan/phpstan-phpunit": "^1",
+                "symfony/phpunit-bridge": "^7.1.1",
+                "symfony/process": "^5 || ^6 || ^7"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Composer\\Installers\\Plugin",
+                "branch-alias": {
+                    "dev-main": "2.x-dev"
+                },
+                "plugin-modifies-install-path": true
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Installers\\": "src/Composer/Installers"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "https://github.com/shama"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "https://composer.github.io/installers/",
+            "keywords": [
+                "Dolibarr",
+                "Eliasis",
+                "Hurad",
+                "ImageCMS",
+                "Kanboard",
+                "Lan Management System",
+                "MODX Evo",
+                "MantisBT",
+                "Mautic",
+                "Maya",
+                "OXID",
+                "Plentymarkets",
+                "Porto",
+                "RadPHP",
+                "SMF",
+                "Starbug",
+                "Thelia",
+                "Whmcs",
+                "WolfCMS",
+                "agl",
+                "annotatecms",
+                "attogram",
+                "bitrix",
+                "cakephp",
+                "chef",
+                "cockpit",
+                "codeigniter",
+                "concrete5",
+                "concreteCMS",
+                "croogo",
+                "dokuwiki",
+                "drupal",
+                "eZ Platform",
+                "elgg",
+                "expressionengine",
+                "fuelphp",
+                "grav",
+                "installer",
+                "itop",
+                "known",
+                "kohana",
+                "laravel",
+                "lavalite",
+                "lithium",
+                "magento",
+                "majima",
+                "mako",
+                "matomo",
+                "mediawiki",
+                "miaoxing",
+                "modulework",
+                "modx",
+                "moodle",
+                "osclass",
+                "pantheon",
+                "phpbb",
+                "piwik",
+                "ppi",
+                "processwire",
+                "puppet",
+                "pxcms",
+                "reindex",
+                "roundcube",
+                "shopware",
+                "silverstripe",
+                "sydes",
+                "sylius",
+                "tastyigniter",
+                "wordpress",
+                "yawik",
+                "zend",
+                "zikula"
+            ],
+            "support": {
+                "issues": "https://github.com/composer/installers/issues",
+                "source": "https://github.com/composer/installers/tree/v2.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-06-24T20:46:46+00:00"
+        },
         {
             "name": "inc2734/wp-breadcrumbs",
             "version": "3.1.9",
@@ -369,40 +515,120 @@
             "time": "2024-09-09T11:45:10+00:00"
         },
         {
-            "name": "timber/timber",
-            "version": "v2.3.1",
+            "name": "symfony/polyfill-php80",
+            "version": "v1.32.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/timber/timber.git",
-                "reference": "3f6e73feadf5d547dff4992f645805da7fbc4d3a"
+                "url": "https://github.com/symfony/polyfill-php80.git",
+                "reference": "0cc9dd0f17f61d8131e7df6b84bd344899fe2608"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/timber/timber/zipball/3f6e73feadf5d547dff4992f645805da7fbc4d3a",
-                "reference": "3f6e73feadf5d547dff4992f645805da7fbc4d3a",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/0cc9dd0f17f61d8131e7df6b84bd344899fe2608",
+                "reference": "0cc9dd0f17f61d8131e7df6b84bd344899fe2608",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.1",
-                "twig/twig": "^3.17"
+                "php": ">=7.2"
+            },
+            "type": "library",
+            "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php80\\": ""
+                },
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ion Bazan",
+                    "email": "ion.bazan@gmail.com"
+                },
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.32.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2025-01-02T08:10:11+00:00"
+        },
+        {
+            "name": "timber/timber",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/timber/timber.git",
+                "reference": "d353d1912a1a051f47ba2d3f2e3ae1af1e5bed53"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/timber/timber/zipball/d353d1912a1a051f47ba2d3f2e3ae1af1e5bed53",
+                "reference": "d353d1912a1a051f47ba2d3f2e3ae1af1e5bed53",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0",
+                "php": "^7.4 || ^8.0",
+                "symfony/polyfill-php80": "^1.27",
+                "twig/twig": "^2.15.3 || ^3.0"
             },
             "require-dev": {
                 "ergebnis/composer-normalize": "^2.28",
                 "php-parallel-lint/php-parallel-lint": "^1.3",
                 "php-stubs/acf-pro-stubs": "^6.0",
                 "php-stubs/wp-cli-stubs": "^2.0",
-                "phpro/grumphp": "^2.0",
+                "phpro/grumphp": "^1.12",
                 "phpstan/extension-installer": "^1.1",
                 "phpstan/phpstan": "^1.7",
-                "phpunit/phpunit": "^9.0",
-                "rector/rector": "^1.0",
                 "squizlabs/php_codesniffer": "^3.0",
-                "symplify/easy-coding-standard": "^12.2",
+                "symplify/easy-coding-standard": "^12.0",
                 "szepeviktor/phpstan-wordpress": "^1.1",
-                "twig/cache-extra": "^3.17",
-                "wpackagist-plugin/advanced-custom-fields": "^6.0",
-                "wpackagist-plugin/co-authors-plus": "^3.6",
-                "yoast/wp-test-utils": "^1.2"
+                "twig/cache-extra": "^3.3",
+                "wpackagist-plugin/advanced-custom-fields": "^5.0 || ^6.0",
+                "wpackagist-plugin/co-authors-plus": "^3.3",
+                "yoast/wp-test-utils": "^1.0"
             },
             "suggest": {
                 "php-coveralls/php-coveralls": "^2.0 for code coverage",
@@ -445,7 +671,7 @@
                 }
             ],
             "description": "Create WordPress themes with beautiful OOP code and the Twig Template Engine",
-            "homepage": "https://timber.upstatement.com",
+            "homepage": "http://timber.upstatement.com",
             "keywords": [
                 "templating",
                 "themes",
@@ -460,15 +686,11 @@
             },
             "funding": [
                 {
-                    "url": "https://github.com/timber",
-                    "type": "github"
-                },
-                {
                     "url": "https://opencollective.com/timber",
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-12-23T13:04:50+00:00"
+            "time": "2024-04-10T15:02:17+00:00"
         },
         {
             "name": "twig/twig",
