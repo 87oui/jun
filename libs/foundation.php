@@ -5,6 +5,10 @@
  * @package Jun
  */
 
+add_theme_support( 'title-tag' );
+add_theme_support( 'post-thumbnails' );
+add_theme_support( 'responsive-embeds' );
+
 // WordPressのバージョン情報を削除
 remove_action( 'wp_head', 'wp_generator' );
 
@@ -36,10 +40,3 @@ if ( ! function_exists( 'jun_disable_emoji' ) ) {
 	}
 }
 add_action( 'init', 'jun_disable_emoji' );
-
-/**
-* 埋め込みコンテンツのレスポンシブ化を有効化
-*
-* See: https://ja.wordpress.org/team/handbook/block-editor/how-to-guides/themes/theme-support/
-*/
-add_theme_support( 'responsive-embeds' );

@@ -1,6 +1,6 @@
 {
   "name": "jun",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "\"Jun\" WordPress theme with Timber.",
   "main": "index.js",
   "scripts": {
