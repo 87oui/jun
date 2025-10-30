@@ -51,29 +51,16 @@ class StarterSite extends Timber\Site {
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
 	 */
 	public function add_to_context( $context ) {
+		$context['site']  = $this;
+		$context['env'] = wp_get_environment_type();
+
 		// パンくずリスト
-		$breadcrumbs = new Inc2734\WP_Breadcrumbs\Bootstrap();
+		$breadcrumbs            = new \Inc2734\WP_Breadcrumbs\Bootstrap();
 		$context['breadcrumbs'] = $breadcrumbs->get();
 
 		// メニュー
-		$menu  = new Timber\Menu( 'global' );
-		foreach ( $menu->items as $i => $item ) {
-			if ( 'page' === $item->object ) {
-				preg_match( '/page_id=(\d+)/', $item->url, $matches );
-				if ( $matches ) {
-					$page_id = $matches[1];
-					$page = get_post( $page_id );
-				} else {
-					$page = get_page_by_path( str_replace( get_home_url(), '', $item->url ) );
-				}
-				$menu->items[ $i ]->disabled = 'publish' !== $page->post_status;
-			} else {
-				$menu->items[ $i ]->disabled = false;
-			}
-		}
+		$menu            = new Timber\Menu( 'global' );
 		$context['menu'] = $menu;
-
-		$context['site']  = $this;
 
 		return $context;
 	}
@@ -86,10 +73,23 @@ class StarterSite extends Timber\Site {
 	public function add_to_twig( $twig ) {
 		$twig->addExtension( new Twig\Extension\StringLoaderExtension() );
 
+		$twig->addFunction( new \Twig\TwigFunction( 'get_static_file_path', 'get_static_file_path' ) );
+		$twig->addFunction( new \Twig\TwigFunction( 'get_image_path', 'get_image_path' ) );
 		$twig->addFunction(
-			new Timber\Twig_function( 'get_static_file_path', 'get_static_file_path' )
+			new \Twig\TwigFunction(
+				'clsx',
+				function ( ...$classnames ) {
+					$classnames = array_filter(
+						$classnames,
+						function ( $classname ) {
+							return ! empty( $classname ) && is_string( $classname );
+						}
+					);
+
+					return implode( ' ', $classnames );
+				}
+			)
 		);
-		$twig->addFunction( new Timber\Twig_function( 'get_image_path', 'get_image_path' ) );
 
 		return $twig;
 	}

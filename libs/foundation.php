@@ -5,46 +5,6 @@
  * @package Jun
  */
 
-// head要素にRSSフィードへのリンクを出力
-add_theme_support( 'automatic-feed-links' );
-
-// title要素を出力
-add_theme_support( 'title-tag' );
-
-if ( ! function_exists( 'jun_custom_document_title_separator' ) ) {
-	/**
-	 * タイトルの区切り文字を変更
-	 *
-	 * @return string  区切り文字
-	 */
-	function jun_custom_document_title_separator() {
-		return '|';
-	}
-}
-add_filter( 'document_title_separator', 'jun_custom_document_title_separator' );
-
-// メニューを有効化
-add_theme_support( 'menus' );
-
-// メニューを追加
-register_nav_menus(
-	array(
-		'global' => 'グローバルナビゲーション',
-	)
-);
-
-// HTML5でマークアップする
-add_theme_support(
-	'html5',
-	array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	)
-);
-
 // WordPressのバージョン情報を削除
 remove_action( 'wp_head', 'wp_generator' );
 
@@ -76,3 +36,10 @@ if ( ! function_exists( 'jun_disable_emoji' ) ) {
 	}
 }
 add_action( 'init', 'jun_disable_emoji' );
+
+/**
+* 埋め込みコンテンツのレスポンシブ化を有効化
+*
+* See: https://ja.wordpress.org/team/handbook/block-editor/how-to-guides/themes/theme-support/
+*/
+add_theme_support( 'responsive-embeds' );

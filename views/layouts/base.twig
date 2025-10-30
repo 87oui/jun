@@ -1,0 +1,23 @@
+<!doctype html>
+<html {{ site.language_attributes }}>
+  <head>
+    <meta charset="{{ site.charset }}">
+    <meta name="viewport" content="width=device-width">
+    {% include 'partials/head.twig' %}
+    {% do action('get_header') %}
+    {{ function('wp_head') }}
+  </head>
+
+  <body class="{{ body_class }}">
+    {{ function('wp_body_open') }}
+    {% include 'partials/header.twig' %}
+    {% include 'partials/breadcrumbs.twig' %}
+
+    {% block content %}{% endblock %}
+
+    {% include 'partials/footer.twig' %}
+
+    {{ function('wp_footer') }}
+    {% do action('get_footer') %}
+  </body>
+</html>

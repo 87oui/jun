@@ -1,10 +1,10 @@
 {
   "name": "jun",
-  "version": "1.0.0",
+  "version": "1.6.0",
   "description": "\"Jun\" WordPress theme with Timber.",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write --ignore-path .gitignore 'templates/**/*.twig'"
+    "format": "prettier --write --ignore-path .gitignore 'views/**/*.twig'"
   },
   "author": "",
   "license": "ISC",

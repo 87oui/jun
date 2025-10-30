@@ -36,10 +36,12 @@ if ( is_day() ) {
 	array_unshift( $templates, "category-{$term_object->slug}.twig", 'category.twig' );
 } elseif ( is_author() ) {
 	$author = new Timber\User();
-	$context['author'] = $author;
-	$archive_args['author'] = $author;
-	$archive_title  = $author->name() . 'の記事';
-	array_unshift( $templates, "author-{$author->slug}.twig", 'author.twig' );
+	if ( ! empty( $author ) ) {
+		$context['author'] = $author;
+		$archive_args['author'] = $author;
+		$archive_title  = $author->name() . 'の記事';
+		array_unshift( $templates, "author-{$author->slug}.twig", 'author.twig' );
+	}
 } elseif ( is_post_type_archive() ) {
 	$archive_title = post_type_archive_title( '', false );
 	$archive_args['post_type'] = get_post_type_object( $post_type );
@@ -57,12 +59,5 @@ if ( is_day() ) {
 
 $context['title'] = apply_filters( 'jun_page_title', $archive_title, $archive_args );
 $context['posts'] = new Timber\PostQuery();
-
-$sidebar_config = get_stylesheet_directory() . '/sidebar-config.php';
-if ( file_exists( $sidebar_config ) ) {
-	include_once $sidebar_config;
-	$sidebar_context = jun_get_sidebar_config( $post_type );
-	$context['sidebar'] = Timber::get_sidebar( 'sidebar.twig', $sidebar_context );
-}
 
 Timber::render( $templates, $context );

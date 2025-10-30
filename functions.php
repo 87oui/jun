@@ -9,11 +9,9 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-require get_template_directory() . '/includes/admin-init.php';
-require get_template_directory() . '/includes/breadcrumbs.php';
-require get_template_directory() . '/includes/foundation.php';
-require get_template_directory() . '/includes/media.php';
-require get_template_directory() . '/includes/post.php';
-require get_template_directory() . '/includes/seo.php';
-require get_template_directory() . '/includes/template-functions.php';
-require get_template_directory() . '/includes/timber.php';
+require_once __DIR__ . '/libs/timber.php';
+require_once __DIR__ . '/libs/admin-init.php';
+require_once __DIR__ . '/libs/breadcrumbs.php';
+require_once __DIR__ . '/libs/foundation.php';
+require_once __DIR__ . '/libs/helpers.php';
+require_once __DIR__ . '/libs/seo.php';
