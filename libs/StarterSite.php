@@ -54,8 +54,11 @@ class StarterSite extends Site {
 		$context['env'] = wp_get_environment_type();
 
 		// パンくずリスト
-		$breadcrumbs            = new \Inc2734\WP_Breadcrumbs\Bootstrap();
-		$context['breadcrumbs'] = $breadcrumbs->get();
+		$should_add_breadcrumbs = apply_filters( 'jun_add_breadcrumbs_to_context', true, $context );
+		if ( $should_add_breadcrumbs ) {
+			$breadcrumbs            = new \Inc2734\WP_Breadcrumbs\Bootstrap();
+			$context['breadcrumbs'] = $breadcrumbs->get();
+		}
 
 		// メニュー
 		$menu            = Timber::get_menu( 'global' );
