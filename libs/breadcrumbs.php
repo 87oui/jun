@@ -17,7 +17,7 @@ add_filter(
 			return array();
 		}
 
-		$items = apply_filters('jun_breadcrumbs', $items );
+		$items = apply_filters( 'jun_breadcrumbs', $items );
 
 		return $items;
 	}

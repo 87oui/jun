@@ -2,25 +2,44 @@
 <ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="PHP_CodeSniffer" xsi:noNamespaceSchemaLocation="phpcs.xsd">
   <description>A custom set of code standard rules to check for WordPress themes.</description>
 
+  <ini name="error_reporting" value="E_ALL &#38; ~E_DEPRECATED" />
   <arg name="extensions" value="php" />
   <arg name="colors"/>
-  <arg value="nps"/>
+  <arg value="ns"/>
 
-  <file>./</file>
   <exclude-pattern>*/vendor/*</exclude-pattern>
   <exclude-pattern>*/node_modules/*</exclude-pattern>
+  <exclude-pattern>*/views/cache/*</exclude-pattern>
+  <exclude-pattern>*.asset.php</exclude-pattern>
+  <exclude-pattern>*.blade.php</exclude-pattern>
 
   <rule ref="WordPress">
+    <exclude name="Generic.Commenting.DocComment.MissingShort"/>
     <exclude name="Generic.Commenting.DocComment.ShortNotCapital"/>
-    <exclude name="Generic.Files.LineLength.TooLong"/>
     <exclude name="Squiz.Commenting.FileComment"/>
     <exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop"/>
     <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar"/>
+    <exclude name="Universal.Operators.DisallowShortTernary.Found"/>
+    <exclude name="WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned"/>
     <exclude name="WordPress.DB.PreparedSQL.NotPrepared"/>
     <exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
     <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
+    <exclude name="WordPress.PHP.DisallowShortTernary.Found"/>
     <exclude name="WordPress.PHP.DontExtract.extract_extract"/>
+		<exclude name="WordPress.PHP.YodaConditions.NotYoda"/>
     <exclude name="WordPress.WP.Capabilities.RoleFound"/>
+    <exclude name="WordPress.WP.EnqueuedRewebParameters.MissingVersion"/>
     <exclude name="WordPress.WP.EnqueuedResourceParameters.MissingVersion"/>
   </rule>
+
+  <rule ref="Generic.ControlStructures.DisallowYodaConditions"/>
+
+  <rule ref="Generic.Files.LineLength">
+    <properties>
+      <property name="lineLimit" value="100"/>
+      <property name="absoluteLineLimit" value="120"/>
+    </properties>
+  </rule>
+
+  <ini name="memory_limit" value="128M"/>
 </ruleset>
