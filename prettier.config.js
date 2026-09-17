@@ -9,7 +9,7 @@ export default {
   trailingComma: 'es5',
   bracketSpacing: true,
   bracketSameLine: true,
-  plugins: ['@destination/prettier-plugin-twig'],
+  plugins: ['@zackad/prettier-plugin-twig'],
   overrides: [
     {
       files: '*.twig',

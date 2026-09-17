@@ -4,17 +4,18 @@
 {% block content %}
   <div class="content-wrapper">
     {% for post in posts %}
-      {% include ['partials/tease-' ~ post.type ~ '.twig', 'partials/tease.twig'] %}
+      {% include [
+        'partials/tease-' ~ post.type ~ '.twig',
+        'partials/tease.twig'
+      ] %}
     {% endfor %}
 
-    {%
-      include 'partials/pagination.twig' with {
+    {% include 'partials/pagination.twig' with {
       pagination: posts.pagination({
-      show_all: false,
-      mid_size: 3,
-      end_size: 2
+        show_all: false,
+        mid_size: 3,
+        end_size: 2
       })
-      }
-    %}
+    } %}
   </div>
 {% endblock %}
