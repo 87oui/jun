@@ -44,7 +44,7 @@ if ( is_day() ) {
 	if ( ! empty( $author ) ) {
 		$context['author'] = $author;
 		$archive_args['author'] = $author;
-		$archive_title  = $author->name() . 'の記事';
+		$archive_title = $author->name() . 'の記事';
 		array_unshift( $templates, "author-{$author->slug}.twig", 'author.twig' );
 	}
 } elseif ( is_post_type_archive() ) {

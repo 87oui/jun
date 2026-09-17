@@ -11,7 +11,7 @@ use Timber\Timber;
 
 $templates = array( 'search.twig', 'archive.twig', 'index.twig' );
 
-$context          = Timber::context();
+$context = Timber::context();
 $context['title'] = apply_filters(
 	'jun_page_title',
 	sprintf(

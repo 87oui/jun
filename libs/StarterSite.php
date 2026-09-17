@@ -56,12 +56,12 @@ class StarterSite extends Site {
 		// パンくずリスト
 		$should_add_breadcrumbs = apply_filters( 'jun_add_breadcrumbs_to_context', true, $context );
 		if ( $should_add_breadcrumbs ) {
-			$breadcrumbs            = new \Inc2734\WP_Breadcrumbs\Bootstrap();
+			$breadcrumbs = new \Inc2734\WP_Breadcrumbs\Bootstrap();
 			$context['breadcrumbs'] = $breadcrumbs->get();
 		}
 
 		// メニュー
-		$menu            = Timber::get_menu( 'global' );
+		$menu = Timber::get_menu( 'global' );
 		$context['menu'] = $menu;
 
 		return $context;
