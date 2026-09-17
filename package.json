@@ -1,6 +1,6 @@
 {
   "name": "jun",
-  "version": "v2.3.0",
+  "version": "v2.3.1",
   "description": "\"Jun\" WordPress theme with Timber.",
   "main": "index.js",
   "type": "module",
