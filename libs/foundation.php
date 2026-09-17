@@ -5,9 +5,6 @@
  * @package Jun
  */
 
-// WordPressのバージョン情報を削除
-remove_action( 'wp_head', 'wp_generator' );
-
 // RSDリンクを削除
 remove_action( 'wp_head', 'rsd_link' );
 
